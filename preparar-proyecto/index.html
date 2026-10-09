@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Descarga preparar-proyecto, la skill de heyGave para definir tu primera versión con reglas, comprobaciones y pendientes antes de construir con IA.">
+  <meta name="theme-color" content="#14130f">
+  <title>Prepara tu proyecto con IA | heyGave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --ink:#14130f; --lime:#d4fb50; --cream:#f6f0d8; --paper:#fffdf6; --line:#ded8c4; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--cream); color:var(--ink); font-family:'Plus Jakarta Sans',system-ui,sans-serif; line-height:1.65; }
+    a { color:inherit; text-underline-offset:4px; }
+    button,textarea { font:inherit; }
+    a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid #597900; outline-offset:5px; }
+    .wrap { width:min(100% - 40px,900px); margin:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:24px 0; }
+    .brand { text-decoration:none; font-size:24px; font-weight:800; letter-spacing:-1px; }
+    .brand span { background:var(--lime); border-radius:8px; padding:0 4px; }
+    .handle { font-size:13px; font-weight:600; }
+    .hero { background:var(--ink); color:var(--cream); padding:clamp(28px,5vw,52px); border-radius:28px; }
+    .badge { display:inline-block; color:var(--lime); border:1px solid #5e6e30; border-radius:99px; padding:5px 12px; font-size:12px; font-weight:700; letter-spacing:.03em; }
+    h1 { margin:18px 0; max-width:740px; font-size:clamp(34px,6vw,59px); line-height:1.1; font-weight:800; letter-spacing:-.04em; }
+    h1 span { color:var(--lime); }
+    .lead { max-width:650px; margin:0 0 20px; color:#e6e0cc; font-size:17px; }
+    .limit { margin:0 0 25px; color:#e6e0cc; font-size:14px; }
+    .download { display:inline-flex; justify-content:center; align-items:center; gap:9px; background:var(--lime); color:var(--ink); border-radius:12px; padding:15px 22px; text-decoration:none; font-weight:800; line-height:1.4; }
+    .download:hover { background:#e3ff85; }
+    .file-note { font-size:12px; color:#d1ccb8; margin:12px 0 0; }
+    .results { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0 35px; }
+    .result { border:1px solid var(--line); border-radius:14px; padding:15px; background:var(--paper); }
+    .result strong { display:block; font-size:14px; }
+    .result span { display:block; margin-top:4px; font-size:12px; }
+    section { margin-bottom:32px; }
+    h2 { font-size:26px; line-height:1.2; letter-spacing:-.02em; margin:0 0 15px; }
+    .intro { margin:0 0 18px; font-size:14px; }
+    ol { list-style:none; padding:0; margin:0; counter-reset:step; }
+    li { position:relative; padding:0 0 20px 46px; counter-increment:step; }
+    li::before { content:counter(step); position:absolute; left:0; top:1px; width:30px; height:30px; display:grid; place-items:center; border-radius:50%; background:var(--lime); font-size:14px; font-weight:800; }
+    li strong { display:block; font-size:16px; }
+    li p { margin:5px 0 0; font-size:14px; }
+    .help { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:17px 20px; font-size:13px; }
+    .prompt-card { border:1px solid var(--line); border-radius:20px; background:var(--paper); padding:clamp(20px,4vw,30px); }
+    textarea { width:100%; min-height:210px; border:1px solid #d0cbb8; border-radius:12px; background:#f6f3e9; color:var(--ink); padding:16px; resize:vertical; font-size:14px; line-height:1.65; }
+    .copy { margin-top:12px; background:var(--ink); color:var(--cream); border:0; padding:12px 18px; border-radius:10px; cursor:pointer; font-weight:700; }
+    .copy:hover { background:#36332c; }
+    .status { min-height:24px; margin:8px 0 0; font-size:13px; }
+    .footer { border-top:1px solid var(--line); margin-top:35px; padding:22px 0 32px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12px; }
+    @media(max-width:560px) {
+      .wrap { width:calc(100% - 28px); }
+      header { padding:18px 0; }
+      .hero { border-radius:20px; }
+      .results { grid-template-columns:repeat(2,1fr); }
+      .download { width:100%; padding:15px 12px; }
+      .lead { font-size:16px; }
+      h2 { font-size:23px; }
+      textarea { min-height:290px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="https://www.instagram.com/heygave.ia/" aria-label="heyGave en Instagram">hey<span>Gave</span></a>
+      <a class="handle" href="https://www.instagram.com/heygave.ia/">@heygave.ia</a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <span class="badge">SKILL PARA CLAUDE</span>
+        <h1 id="title">Define tu idea <span>antes de construir.</span></h1>
+        <p class="lead">Prepara tu proyecto es una skill que te ayuda a definir la primera versión de una app, web o automatización, desde cero o como mejora de un proyecto existente.</p>
+        <p class="limit">Guía la conversación con hasta <strong>5 preguntas, incluida la revisión final</strong>, y prepara un documento con tus decisiones y pendientes.</p>
+        <a class="download" id="download" href="preparar-proyecto.zip" download="preparar-proyecto.zip">Descargar skill (.zip) <span aria-hidden="true">↓</span></a>
+        <p class="file-note">Versión 3 · El ZIP está listo para cargar en Claude.</p>
+      </section>
+      <div class="results" aria-label="Qué define el documento">
+        <div class="result"><strong>Primera versión</strong><span>Qué construir primero.</span></div>
+        <div class="result"><strong>Reglas</strong><span>Cómo debe comportarse.</span></div>
+        <div class="result"><strong>Comprobaciones</strong><span>Cómo revisar si cumple.</span></div>
+        <div class="result"><strong>Pendientes</strong><span>Qué falta decidir o revisar.</span></div>
+      </div>
+      <section aria-labelledby="use-title">
+        <h2 id="use-title">Cómo usarla en Claude</h2>
+        <ol>
+          <li><strong>Descarga el ZIP</strong><p>Guarda <b>preparar-proyecto.zip</b> en tu dispositivo.</p></li>
+          <li><strong>Carga y activa la skill</strong><p>En Claude, entra a <b>Personalizar → Habilidades</b> (Customize → Skills). Pulsa <b>+</b>, elige <b>Create skill → Upload a skill</b> y selecciona el ZIP. Después, actívala.</p></li>
+          <li><strong>Cuéntale tu idea</strong><p>Abre una conversación nueva y adapta el mensaje de abajo. Responde a las preguntas y revisa el resumen. Después de tu respuesta a la revisión final, la skill está preparada para entregar el documento completo con el que continuarás la construcción.</p></li>
+        </ol>
+        <p class="help">Si no ves Habilidades, revisa que <b>ejecución de código y creación de archivos</b> esté activada en <b>Configuración → Capacidades</b> (Settings → Capabilities). <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Consulta las instrucciones oficiales de Claude</a>.</p>
+      </section>
+      <section class="prompt-card" aria-labelledby="prompt-title">
+        <h2 id="prompt-title">Un mensaje para empezar</h2>
+        <p class="intro">Cambia lo que aparece entre corchetes por tu idea, las personas que la usarán y la necesidad que quieres resolver.</p>
+        <textarea id="prompt" aria-label="Mensaje editable para iniciar tu proyecto" spellcheck="false">Usa preparar-proyecto. Quiero crear desde cero [describe tu idea de app, web o automatización] para [quién la usará] y resolver [qué necesidad].
+
+Ayúdame a definir una primera versión con hasta cinco preguntas en total, incluida la revisión final. Después de mi respuesta a esa revisión, entrega el documento completo con alcance, reglas, comprobaciones y pendientes.</textarea>
+        <button class="copy" id="copy" type="button">Copiar mensaje</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>Un recurso de heyGave para aprender haciendo.</span>
+      <a href="/">Ver la guía para tu primera app</a>
+    </footer>
+  </div>
+  <script>
+    const promptField = document.getElementById('prompt');
+    const copyButton = document.getElementById('copy');
+    const copyStatus = document.getElementById('status');
+    copyButton.addEventListener('click', async () => {
+      try {
+        if (!navigator.clipboard) throw new Error('clipboard unavailable');
+        await navigator.clipboard.writeText(promptField.value);
+        copyStatus.textContent = 'Mensaje copiado. Adáptalo a tu proyecto y pégalo en Claude.';
+      } catch {
+        promptField.focus();
+        promptField.select();
+        copyStatus.textContent = 'El mensaje quedó seleccionado. Usa la opción Copiar de tu dispositivo.';
+      }
+    });
+  </script>
+</body>
+</html>
